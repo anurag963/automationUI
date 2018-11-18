@@ -1,9 +1,7 @@
-package com.app.driverControls;
+package com.app.driverControlsLibrary;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
@@ -66,6 +64,35 @@ public class BaseClass {
         }
 
 
+    }
+
+    public static WebElement getLocator(String locator) throws Exception {
+        String[] split = locator.split(":");
+        String locatorType = split[0];
+        String locatorValue = split[1];
+
+        if (locatorType.toLowerCase().equals("id"))
+            return driver.findElement(By.id(locatorValue));
+        else if (locatorType.toLowerCase().equals("name"))
+            return driver.findElement(By.name(locatorValue));
+        else if ((locatorType.toLowerCase().equals("classname"))
+                || (locatorType.toLowerCase().equals("class")))
+            return driver.findElement(By.className(locatorValue));
+        else if ((locatorType.toLowerCase().equals("tagname"))
+                || (locatorType.toLowerCase().equals("tag")))
+            return driver.findElement(By.className(locatorValue));
+        else if ((locatorType.toLowerCase().equals("linktext"))
+                || (locatorType.toLowerCase().equals("link")))
+            return driver.findElement(By.linkText(locatorValue));
+        else if (locatorType.toLowerCase().equals("partiallinktext"))
+            return driver.findElement(By.partialLinkText(locatorValue));
+        else if ((locatorType.toLowerCase().equals("cssselector"))
+                || (locatorType.toLowerCase().equals("css")))
+            return driver.findElement(By.cssSelector(locatorValue));
+        else if (locatorType.toLowerCase().equals("xpath"))
+            return driver.findElement(By.xpath(locatorValue));
+        else
+            throw new Exception("Unknown locator type '" + locatorType + "'");
     }
 
 

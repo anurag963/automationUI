@@ -1,9 +1,9 @@
 package testPkg1;
 
-import com.app.driverControls.BaseClass;
-import com.app.pageFactory.IndexPage;
-import com.app.pageFactory.MyAccountPage;
-import com.app.pageFactory.SignInPage;
+import com.app.driverControlsLibrary.BaseClass;
+import com.app.pageLibrary.IndexPage;
+import com.app.pageLibrary.MyAccountPage;
+import com.app.pageLibrary.SignInPage;
 import org.testng.annotations.Test;
 
 public class SignInTest extends BaseClass {

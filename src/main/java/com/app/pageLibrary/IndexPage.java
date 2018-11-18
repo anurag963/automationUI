@@ -1,7 +1,7 @@
-package com.app.pageFactory;
+package com.app.pageLibrary;
 
-import com.app.driverControls.Click;
-import com.app.driverControls.Waits;
+import com.app.driverControlsLibrary.Click;
+import com.app.driverControlsLibrary.Waits;
 
 public class IndexPage {
 

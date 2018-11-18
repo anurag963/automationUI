@@ -1,7 +1,7 @@
-package com.app.pageFactory;
+package com.app.pageLibrary;
 
-import com.app.driverControls.Grab;
-import com.app.driverControls.Waits;
+import com.app.driverControlsLibrary.Grab;
+import com.app.driverControlsLibrary.Waits;
 import org.testng.Assert;
 
 public class MyAccountPage {

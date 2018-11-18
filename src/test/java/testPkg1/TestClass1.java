@@ -1,8 +1,7 @@
 package testPkg1;
 
-import com.app.driverControls.BaseClass;
-import com.app.driverControls.SetValue;
-import com.app.pageFactory.IndexPage;
+import com.app.driverControlsLibrary.BaseClass;
+import com.app.pageLibrary.IndexPage;
 import org.testng.annotations.Test;
 
 public class TestClass1 extends BaseClass{

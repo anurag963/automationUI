@@ -2,8 +2,6 @@ package com.app.utils;
 
 
 import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellType;
-import org.apache.poi.ss.usermodel.FormulaEvaluator;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -23,8 +21,6 @@ public class ExcelManage {
             FileInputStream fis= new FileInputStream(new File(excelLocation) );
             XSSFWorkbook workbook= new XSSFWorkbook(fis);
             XSSFSheet sheet= workbook.getSheet(sheetName);
-
-            //FormulaEvaluator evaluator = workbook.getCreationHelper().createFormulaEvaluator();
 
             int totalNumberOfRows= sheet.getLastRowNum();
             System.out.println(totalNumberOfRows);

@@ -5,7 +5,7 @@ public class ValueFinder {
     PropertyFileUtil propertyFileUtil= new PropertyFileUtil();
 
     public String findValue(String key, String classname){
-        String xPathValue=propertyFileUtil.propertyFileReader(key,"/identifierValues/"+fileNameMapper(classname) );
+        String xPathValue=propertyFileUtil.propertyFileReader(key, "/locators/" +fileNameMapper(classname) );
         return xPathValue;
     }
 
