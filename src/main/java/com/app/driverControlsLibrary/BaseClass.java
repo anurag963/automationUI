@@ -4,6 +4,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
@@ -20,6 +21,7 @@ import java.util.concurrent.TimeUnit;
 public class BaseClass {
 
     public static WebDriver driver;
+    RemoteWebDriver driver1;
     public String browser;
     public String url;
 
@@ -51,6 +53,7 @@ public class BaseClass {
     {
         if(browser.equalsIgnoreCase("chrome"))
         {
+
             System.out.println(System.getProperty("user.dir"));
             System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/src/main/resources/drivers/chromedriver.exe");
             driver= new ChromeDriver();

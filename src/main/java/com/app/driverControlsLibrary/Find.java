@@ -12,7 +12,7 @@ public class Find extends BaseClass{
 
         try{
             locatorValue=valueFinder.findValue(locator, className);
-            element= getLocator(locatorValue);;
+            element= getLocator(locatorValue);
             return element;
         }catch(Exception e){
             e.printStackTrace();
