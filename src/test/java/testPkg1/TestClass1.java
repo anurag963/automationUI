@@ -9,7 +9,6 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import org.testng.Assert;
 
 public class TestClass1{
 
@@ -38,8 +37,6 @@ public class TestClass1{
         test = extent.createTest("MyFirstTest2", "Test Description2");
         System.out.println("Test2 ");
         test.log(Status.INFO, "test 2");
-        Assert.assertEquals("Gooooogle", "a");
-
     }
 
     @AfterClass
