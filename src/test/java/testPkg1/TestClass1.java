@@ -37,6 +37,7 @@ public class TestClass1{
         test = extent.createTest("MyFirstTest2", "Test Description2");
         System.out.println("Test2 ");
         test.log(Status.INFO, "test 2");
+        Assert.assertEquals("Gooooogle", "a");
 
     }
 
