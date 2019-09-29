@@ -90,6 +90,21 @@ public class BaseClass {
             System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"/src/main/resources/drivers/geckodriver.exe");
             driver= new FirefoxDriver();
 
+        }
+
+        else if(browser.equalsIgnoreCase("ie"))
+        {
+            System.out.println(System.getProperty("user.dir"));
+            //System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"/src/main/resources/drivers/geckodriver.exe");
+
+            DesiredCapabilities cap = DesiredCapabilities.internetExplorer();
+
+            try{
+                driver = new RemoteWebDriver(new URL(Node), cap);
+            }catch(Exception e){
+
+            }
+
 
 
         }
