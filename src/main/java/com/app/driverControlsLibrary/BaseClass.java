@@ -57,9 +57,9 @@ public class BaseClass {
 
             System.out.println(System.getProperty("user.dir"));
             System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/src/main/resources/drivers/chromedriver.exe");
-           // driver= new ChromeDriver();
+            driver= new ChromeDriver();
 
-            // We could use any driver for our tests...
+          /*  // We could use any driver for our tests...
             DesiredCapabilities capabilities = new DesiredCapabilities();
 
             // ... but only if it supports javascript
@@ -70,7 +70,7 @@ public class BaseClass {
             WebDriver driver = new RemoteWebDriver(capabilities);
 
             // Query the driver to find out more information
-            Capabilities actualCapabilities = ((RemoteWebDriver) driver).getCapabilities();
+            Capabilities actualCapabilities = ((RemoteWebDriver) driver).getCapabilities();*/
 
         }
         else if(browser.equalsIgnoreCase("firefox"))
