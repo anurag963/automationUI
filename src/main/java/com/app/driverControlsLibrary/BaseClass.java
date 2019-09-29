@@ -18,6 +18,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+import java.net.URL;
 
 public class BaseClass {
 
@@ -30,6 +31,8 @@ public class BaseClass {
     public File propFile;
     public FileInputStream propFis;
 
+
+    String Node = "http://192.168.1.10:4444/wd/hub";
 
     static{
         Calendar calender= Calendar.getInstance();
@@ -56,8 +59,16 @@ public class BaseClass {
         {
 
             System.out.println(System.getProperty("user.dir"));
-            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/src/main/resources/drivers/chromedriver.exe");
-            driver= new ChromeDriver();
+            //System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/src/main/resources/drivers/chromedriver.exe");
+            //driver= new ChromeDriver();
+
+            DesiredCapabilities cap = DesiredCapabilities.chrome();
+
+            try{
+            driver = new RemoteWebDriver(new URL(Node), cap);
+            }catch(Exception e){
+
+            }
 
           /*  // We could use any driver for our tests...
             DesiredCapabilities capabilities = new DesiredCapabilities();
