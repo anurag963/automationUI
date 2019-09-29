@@ -4,6 +4,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
@@ -56,7 +57,20 @@ public class BaseClass {
 
             System.out.println(System.getProperty("user.dir"));
             System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/src/main/resources/drivers/chromedriver.exe");
-            driver= new ChromeDriver();
+           // driver= new ChromeDriver();
+
+            // We could use any driver for our tests...
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+
+            // ... but only if it supports javascript
+            capabilities.setJavascriptEnabled(true);
+
+            // Get a handle to the driver. This will throw an exception
+            // if a matching driver cannot be located
+            WebDriver driver = new RemoteWebDriver(capabilities);
+
+            // Query the driver to find out more information
+            Capabilities actualCapabilities = ((RemoteWebDriver) driver).getCapabilities();
 
         }
         else if(browser.equalsIgnoreCase("firefox"))
@@ -64,6 +78,9 @@ public class BaseClass {
             System.out.println(System.getProperty("user.dir"));
             System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"/src/main/resources/drivers/geckodriver.exe");
             driver= new FirefoxDriver();
+
+
+
         }
 
 
